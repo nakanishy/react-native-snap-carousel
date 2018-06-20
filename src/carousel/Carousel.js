@@ -231,7 +231,11 @@ export default class Carousel extends Component {
         }
 
         const nextFirstItem = this._getFirstItem(firstItem, nextProps);
-        let nextActiveItem = this._activeItem || this._activeItem === 0 ? this._activeItem : nextFirstItem;
+        // let nextActiveItem = this._activeItem || this._activeItem === 0 ? this._activeItem : nextFirstItem;
+        
+        // データの更新があった場合、かならずindexを0にするように変更
+        let nextActiveItem = 0
+        this._activeItem = 0
 
         const hasNewSliderWidth = sliderWidth && sliderWidth !== this.props.sliderWidth;
         const hasNewSliderHeight = sliderHeight && sliderHeight !== this.props.sliderHeight;
